@@ -16,6 +16,8 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@vuelidate/core": "2.0.0-alpha.44",
+    "@vuelidate/validators": "2.0.0-alpha.31",
     "@vueuse/head": "^0.7.9",
     "pinia": "^2.0.17",
     "unplugin-auto-import": "^0.10.3",

@@ -1,9 +1,8 @@
 export interface Message {
-  title: string;
+  name: string;
+  email: string;
+  subject: string;
   message: string;
-  recipient: string;
-  timestamp: Date;
-  checkbox: boolean;
 }
 
 export interface Origin {

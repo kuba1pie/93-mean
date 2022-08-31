@@ -1,7 +1,7 @@
 <template>
   <div class="v-index flex flex-col text-10">
     <TheHeader />
-    <main class="main flex justify-center m-2">
+    <main class="main flex justify-center">
       <TheEditor />
     </main>
   </div>
