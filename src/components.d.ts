@@ -7,8 +7,12 @@ export {};
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
+    copy: typeof import("./components/TheEditor copy.vue")["default"];
     HelloWorld: typeof import("./components/HelloWorld.vue")["default"];
+    MainButton: typeof import("./components/MainButton.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
+    TheEditor: typeof import("./components/TheEditor.vue")["default"];
+    TheHeader: typeof import("./components/TheHeader.vue")["default"];
   }
 }
