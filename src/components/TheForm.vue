@@ -1,5 +1,5 @@
 <template>
-  <form action="#" class="flex flex-col">
+  <form class="flex flex-col" @click="onFormEdit">
     <div class="form__name">
       <label for="name">Name</label>
       <input
@@ -48,7 +48,7 @@
         v-model="formData.message"
         name="text"
         placeholder="Enter the message here..."
-        maxlength="256"
+        maxlength="500"
         class="h-50"
         :class="{ red: v$.message.$error }"
         @blur="v$.message.$touch"
@@ -60,13 +60,18 @@
     </div>
     <div class="form__button">
       <button
-        type="submit"
-        :class="{ 'bg-red-500/20': v$.$invalid }"
+        type="button"
+        :class="{
+          'bg-red-500/20': v$.$invalid || store.status === 'error',
+          'bg-yellow-500/20': store.status === 'sending',
+          'bg-green-500/20': store.status === 'success',
+          'bg-blue-500/20': store.status === '',
+        }"
         :disabled="v$.$invalid"
-        class="c-tabButton bg-green-500/20 px-8 py-3 text-8 w-80 m-0 border-0"
+        class="c-tabButton px-8 py-3 text-8 w-80 m-0 border-0"
         @click="onSubmitClick()"
       >
-        Send
+        {{ store.statusButton }}
       </button>
     </div>
   </form>
@@ -78,20 +83,24 @@ import { required, email, minLength, maxLength } from "@vuelidate/validators";
 
 const store = useDefaultStore();
 
-const formData = store.formData;
+const formData = computed(() => store.formData);
 
 const rules = reactive({
-  name: { required },
+  name: { required, minLength: minLength(5), maxLength: maxLength(50) },
   email: { required, email },
-  subject: { required },
-  message: { required },
+  subject: { required, maxLength: maxLength(100) },
+  message: { required, maxLength: maxLength(500) },
 });
 
 const v$ = useVueLidate(rules, formData);
 
 async function onSubmitClick() {
-  store.formData.subject = "";
-  store.formData.message = "";
+  store.postMessage();
+}
+
+function onFormEdit() {
+  store.statusButton = "SEND";
+  store.status = "";
 }
 </script>
 <style lang="scss" scope>
@@ -108,6 +117,7 @@ form > div {
   select {
     font-size: 0.6em;
   }
+
   .hidden {
     visibility: hidden;
   }
