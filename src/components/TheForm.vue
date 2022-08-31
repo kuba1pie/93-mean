@@ -48,7 +48,6 @@
         v-model="formData.message"
         name="text"
         placeholder="Enter the message here..."
-        maxlength="500"
         class="h-50"
         :class="{ red: v$.message.$error }"
         @blur="v$.message.$touch"
