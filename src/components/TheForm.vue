@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-col" @click="onFormEdit">
+  <form class="form flex flex-col" @click="onFormEdit">
     <div class="form__name">
       <label for="name">Name</label>
       <input
@@ -9,10 +9,7 @@
         :class="{ red: v$.name.$error }"
         @blur="v$.name.$touch"
       />
-      <FormErrors
-        :class="{ hidden: !v$.name.$error }"
-        :errors="v$.name.$errors"
-      />
+      <FormErrors :errors="v$.name.$errors" />
     </div>
     <div class="form__email">
       <label for="email">Email</label>
@@ -23,10 +20,7 @@
         :class="{ red: v$.email.$error }"
         @blur="v$.email.$touch"
       />
-      <FormErrors
-        :class="{ hidden: !v$.email.$error }"
-        :errors="v$.email.$errors"
-      />
+      <FormErrors :errors="v$.email.$errors" />
     </div>
     <div class="form__subject">
       <label for="input">Subject</label>
@@ -37,10 +31,7 @@
         :class="{ red: v$.subject.$error }"
         @blur="v$.subject.$touch"
       />
-      <FormErrors
-        :class="{ hidden: !v$.subject.$error }"
-        :errors="v$.subject.$errors"
-      />
+      <FormErrors :errors="v$.subject.$errors" />
     </div>
     <div class="form__message flex-col">
       <label for="text">Message</label>
@@ -52,10 +43,7 @@
         :class="{ red: v$.message.$error }"
         @blur="v$.message.$touch"
       />
-      <FormErrors
-        :class="{ hidden: !v$.message.$error }"
-        :errors="v$.message.$errors"
-      />
+      <FormErrors :errors="v$.message.$errors" />
     </div>
     <div class="form__button">
       <button
