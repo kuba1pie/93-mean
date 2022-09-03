@@ -1,5 +1,5 @@
 <template>
-  <form class="form flex flex-col" @click="onFormEdit">
+  <form class="form flex flex-col">
     <div class="form__name">
       <label for="name">Name</label>
       <input
@@ -48,14 +48,15 @@
     <div class="form__button">
       <button
         type="button"
+        name="button"
         :class="{
-          'bg-red-500/20': v$.$invalid || store.status === 'error',
-          'bg-yellow-500/20': store.status === 'sending',
-          'bg-green-500/20': store.status === 'success',
-          'bg-blue-500/20': store.status === '',
+          error: v$.$invalid || store.status === 'error',
+          sending: store.status === 'sending',
+          success: store.status === 'success',
+          def: store.status === '',
         }"
         :disabled="v$.$invalid"
-        class="c-tabButton px-8 py-3 text-8 w-80 m-0 border-0"
+        class="button px-8 py-3 text-8 w-80 m-0 border-0"
         @click="onSubmitClick()"
       >
         {{ store.statusButton }}
@@ -69,25 +70,32 @@ import useVueLidate from "@vuelidate/core";
 import { required, email, minLength, maxLength } from "@vuelidate/validators";
 
 const store = useDefaultStore();
-
 const formData = computed(() => store.formData);
-
 const rules = reactive({
   name: { required, minLength: minLength(5), maxLength: maxLength(50) },
   email: { required, email },
   subject: { required, maxLength: maxLength(100) },
   message: { required, maxLength: maxLength(500) },
 });
-
 const v$ = useVueLidate(rules, formData);
 
-async function onSubmitClick() {
-  store.postMessage();
-}
-
-function onFormEdit() {
-  store.statusButton = "SEND";
-  store.status = "";
+function onSubmitClick() {
+  store
+    .postMessage()
+    .then((response) => {
+      if (response.ok) {
+        store.$reset();
+        store.status = "success";
+        store.statusButton = "SUCCESS";
+      } else {
+        store.status = "error";
+        store.statusButton = "ERROR";
+      }
+    })
+    .catch(() => {
+      store.status = "error";
+      store.statusButton = "Error";
+    });
 }
 </script>
 <style lang="scss" scope>
