@@ -79,23 +79,20 @@ const rules = reactive({
 });
 const v$ = useVueLidate(rules, formData);
 
-function onSubmitClick() {
-  store
-    .postMessage()
-    .then((response) => {
-      if (response.ok) {
-        store.$reset();
-        store.status = "success";
-        store.statusButton = "SUCCESS";
-      } else {
-        store.status = "error";
-        store.statusButton = "ERROR";
-      }
-    })
-    .catch(() => {
-      store.status = "error";
-      store.statusButton = "Error";
-    });
+function setStatus(response: Response) {
+  if (response.ok) {
+    store.$reset();
+    store.status = "success";
+    store.statusButton = "SUCCESS";
+  } else {
+    store.status = "error";
+    store.statusButton = "ERROR";
+  }
+}
+
+async function onSubmitClick() {
+  const getData = await store.postMessage();
+  setStatus(getData);
 }
 </script>
 <style lang="scss" scope>

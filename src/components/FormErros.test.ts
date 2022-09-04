@@ -4,6 +4,11 @@ import { mount } from "@vue/test-utils";
 import { describe, test, expect } from "vitest";
 
 describe("TheError component", () => {
+  test("der match snapshot", () => {
+    const wrapper = mount(FormErrors);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test("exsists", () => {
     const wrapper = mount(FormErrors, { propsData: { errors: [] } });
     expect(wrapper.exists()).toBe(true);
