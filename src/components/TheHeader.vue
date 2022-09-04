@@ -1,9 +1,16 @@
 <template>
-  <header class="header">
+  <header class="header flex">
     <div class="pageLogo m-6">
-      <span class="border-5 border-blue-500/50 font-serif p-3"
-        >MeanMessenger</span
-      >
+      <a href="/">
+        <span class="border-5 border-blue-500/50 font-serif p-3"
+          >MeanMessenger</span
+        >
+      </a>
+    </div>
+    <div class="pageLogo m-6">
+      <a href="./about">
+        <span class="border-5 border-blue-500/50 font-serif p-3">About</span>
+      </a>
     </div>
   </header>
 </template>

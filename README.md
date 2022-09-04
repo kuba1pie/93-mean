@@ -1,5 +1,11 @@
 ## Usage
 
+### Install
+
+```bash
+pnpm i
+```
+
 ### Development
 
 Just run and visit http://localhost:3333
