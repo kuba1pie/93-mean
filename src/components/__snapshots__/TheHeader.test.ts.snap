@@ -26,19 +26,6 @@ VueWrapper {
             </span>
           </a>
         </div>
-        <div
-          class="pageLogo m-6"
-        >
-          <a
-            href="./about"
-          >
-            <span
-              class="border-5 border-blue-500/50 font-serif p-3"
-            >
-              About
-            </span>
-          </a>
-        </div>
       </header>
     </div>,
     "_context": {
@@ -331,21 +318,81 @@ VueWrapper {
               {
                 "__v_isVNode": true,
                 "__v_skip": true,
-                "anchor": <div
-                  class="pageLogo m-6"
-                >
-                  <a
-                    href="./about"
-                  >
-                    <span
-                      class="border-5 border-blue-500/50 font-serif p-3"
-                    >
-                      About
-                    </span>
-                  </a>
-                </div>,
+                "anchor": null,
                 "appContext": null,
-                "children": "<div class=\\"pageLogo m-6\\"><a href=\\"/\\"><span class=\\"border-5 border-blue-500/50 font-serif p-3\\">MeanMessenger</span></a></div><div class=\\"pageLogo m-6\\"><a href=\\"./about\\"><span class=\\"border-5 border-blue-500/50 font-serif p-3\\">About</span></a></div>",
+                "children": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": [
+                      {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "MeanMessenger",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span
+                          class="border-5 border-blue-500/50 font-serif p-3"
+                        >
+                          MeanMessenger
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": {
+                          "class": "border-5 border-blue-500/50 font-serif p-3",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <a
+                      href="/"
+                    >
+                      <span
+                        class="border-5 border-blue-500/50 font-serif p-3"
+                      >
+                        MeanMessenger
+                      </span>
+                    </a>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": {
+                      "href": "/",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "a",
+                  },
+                ],
                 "component": null,
                 "dirs": null,
                 "dynamicChildren": null,
@@ -364,20 +411,22 @@ VueWrapper {
                   </a>
                 </div>,
                 "key": null,
-                "patchFlag": 0,
-                "props": null,
+                "patchFlag": -1,
+                "props": {
+                  "class": "pageLogo m-6",
+                },
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 8,
+                "shapeFlag": 17,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
-                "staticCount": 2,
+                "staticCount": 0,
                 "suspense": null,
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": Symbol(Static),
+                "type": "div",
               },
             ],
             "component": null,
@@ -397,19 +446,6 @@ VueWrapper {
                     class="border-5 border-blue-500/50 font-serif p-3"
                   >
                     MeanMessenger
-                  </span>
-                </a>
-              </div>
-              <div
-                class="pageLogo m-6"
-              >
-                <a
-                  href="./about"
-                >
-                  <span
-                    class="border-5 border-blue-500/50 font-serif p-3"
-                  >
-                    About
                   </span>
                 </a>
               </div>
@@ -462,19 +498,6 @@ VueWrapper {
                 class="border-5 border-blue-500/50 font-serif p-3"
               >
                 MeanMessenger
-              </span>
-            </a>
-          </div>
-          <div
-            class="pageLogo m-6"
-          >
-            <a
-              href="./about"
-            >
-              <span
-                class="border-5 border-blue-500/50 font-serif p-3"
-              >
-                About
               </span>
             </a>
           </div>
@@ -572,19 +595,6 @@ VueWrapper {
               </span>
             </a>
           </div>
-          <div
-            class="pageLogo m-6"
-          >
-            <a
-              href="./about"
-            >
-              <span
-                class="border-5 border-blue-500/50 font-serif p-3"
-              >
-                About
-              </span>
-            </a>
-          </div>
         </header>,
         "key": null,
         "patchFlag": 0,
@@ -646,19 +656,6 @@ VueWrapper {
           class="border-5 border-blue-500/50 font-serif p-3"
         >
           MeanMessenger
-        </span>
-      </a>
-    </div>
-    <div
-      class="pageLogo m-6"
-    >
-      <a
-        href="./about"
-      >
-        <span
-          class="border-5 border-blue-500/50 font-serif p-3"
-        >
-          About
         </span>
       </a>
     </div>
