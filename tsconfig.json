@@ -23,11 +23,5 @@
     "public"
   ],
   "exclude": ["dist", "node_modules"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
-  "formatOnSave": true,
-  "extends": "@vue/tsconfig/tsconfig.web.json"
+  "formatOnSave": true
 }

@@ -1,11 +1,11 @@
-import TheHeader from "./TheHeader.vue";
-import { mount } from "@vue/test-utils";
+import { mount } from '@vue/test-utils'
 
-import { describe, test, expect } from "vitest";
+import { describe, expect, test } from 'vitest'
+import TheHeader from './TheHeader.vue'
 
-describe("The header match snapshot", () => {
-  test("The header match snapshot", () => {
-    const wrapper = mount(TheHeader);
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+describe('The header match snapshot', () => {
+  test('The header match snapshot', () => {
+    const wrapper = mount(TheHeader)
+    expect(wrapper).toMatchSnapshot()
+  })
+})

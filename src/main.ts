@@ -1,17 +1,17 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-import "uno.css";
-import App from "./App.vue";
-import { createRouter, createWebHistory } from "vue-router";
-import { createHead } from "@vueuse/head";
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import 'uno.css'
+import { createRouter, createWebHistory } from 'vue-router'
+import { createHead } from '@vueuse/head'
+import App from './App.vue'
 
-import routes from "~pages";
+import routes from '~pages'
 
-const pinia = createPinia();
+const pinia = createPinia()
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
-const head = createHead();
+})
+const head = createHead()
 
-createApp(App).use(router).use(pinia).use(head).mount("#app");
+createApp(App).use(router).use(pinia).use(head).mount('#app')

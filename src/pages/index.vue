@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="v-index flex flex-col text-10">
     <TheHeader />
@@ -6,7 +8,7 @@
     </main>
   </div>
 </template>
-<script setup lang="ts"></script>
+
 <style lang="scss">
 @media (max-width: 1000px) {
   .text-10 {

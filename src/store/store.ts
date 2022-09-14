@@ -1,7 +1,7 @@
-import { defineStore, storeToRefs } from "pinia";
-import type { Message } from "../types";
+import { defineStore } from 'pinia'
+import type { Message } from '../types'
 
-export const useDefaultStore = defineStore("defaultStore", {
+export const useDefaultStore = defineStore('defaultStore', {
   state: () => ({
     formData: {
       name: import.meta.env.VITE_MESSAGE_NAME,
@@ -9,35 +9,35 @@ export const useDefaultStore = defineStore("defaultStore", {
       subject: import.meta.env.VITE_MESSAGE_TITLE,
       message: import.meta.env.VITE_MESSAGE_CONTENT,
     } as Message,
-    status: "" as String,
-    statusButton: "SEND" as String,
-    responseData: "" as String,
+    status: '' as String,
+    statusButton: 'SEND' as String,
+    responseData: '' as String,
   }),
   actions: {
     delete(inn: number) {
-      fetch("https://5d9f7fe94d823c0014dd323d.mockapi.io/message/" + inn, {
-        method: "DELETE", // or 'PUT'
+      fetch(`https://5d9f7fe94d823c0014dd323d.mockapi.io/message/${inn}`, {
+        method: 'DELETE', // or 'PUT'
         headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
-      });
+      })
     },
     async postMessage() {
-      const data = this.formData;
-      const url = "https://5d9f7fe94d823c0014dd323d.mockapi.io/message";
-      this.status = "sending";
-      this.statusButton = "Sending...";
+      const data = this.formData
+      const url = 'https://5d9f7fe94d823c0014dd323d.mockapi.io/message'
+      this.status = 'sending'
+      this.statusButton = 'Sending...'
       const response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify(data),
-      });
+      })
 
-      return response;
+      return response
     },
   },
-});
+})
